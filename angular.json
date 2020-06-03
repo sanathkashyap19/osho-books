@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "osho-books"
+    }
+  },
+  "defaultProject": "osho-books",
+  "cli": {
+    "analytics": "cc0a3f4f-0d04-43d2-afff-f656062b6935"
+  }
 }
