@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CarouselComponent } from './carousel/carousel.component';
+import { ItemCardComponent } from './item-card/item-card.component';
 
 @NgModule({
-  declarations: [CarouselComponent],
+  declarations: [CarouselComponent, ItemCardComponent],
   imports: [CommonModule, NgbModule],
-  exports: [CarouselComponent, NgbModule],
+  exports: [NgbModule, CarouselComponent, ItemCardComponent],
 })
 export class SharedModule {}
