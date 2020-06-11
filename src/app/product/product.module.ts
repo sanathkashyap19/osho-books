@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SliderModule } from 'angular-image-slider';
 
-import { ProductDetailsComponent } from './product-image-slider/product-image-slider.component';
+import { ProductImageSliderComponent } from './product-image-slider/product-image-slider.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 @NgModule({
-  declarations: [ProductDetailsComponent],
+  declarations: [ProductImageSliderComponent, ProductInfoComponent],
   imports: [CommonModule, SliderModule],
-  exports: [ProductDetailsComponent],
+  exports: [ProductImageSliderComponent, ProductInfoComponent],
 })
 export class ProductModule {}

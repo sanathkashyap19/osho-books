@@ -1,20 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-image-slider',
-  templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss'],
+  templateUrl: './product-image-slider.component.html',
+  styleUrls: ['./product-image-slider.component.scss'],
 })
-export class ProductDetailsComponent implements OnInit {
-  imagesUrl;
+export class ProductImageSliderComponent implements OnInit {
+  @Input() imagesUrl;
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.imagesUrl = [
-      '../../../assets/images/Capture.PNG',
-      '../../../assets/images/Capture.PNG',
-      '../../../assets/images/Capture.PNG',
-    ];
-  }
+  ngOnInit(): void {}
 }

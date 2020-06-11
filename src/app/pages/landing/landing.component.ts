@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  imagesUrl;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.imagesUrl = [
+      '../../../assets/images/Capture.PNG',
+      '../../../assets/images/Capture.PNG',
+      '../../../assets/images/Capture.PNG',
+    ];
+  }
 }

@@ -7,3 +7,22 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.primary-btn {
+    background-color: var(--primary-dark);
+    color: var(--primary);
+    padding: 10px 20px;
+    text-align: center;
+}
