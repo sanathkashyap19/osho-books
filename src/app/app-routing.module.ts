@@ -6,13 +6,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 const routes: Routes = [
   {
     path: '',
-    component: LandingComponent,
-    children: [
-      {
-        path: 'product-details',
-        component: ProductDetailsComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./pages/pages.module').then((m) => m.PagesModule),
   },
 ];
 

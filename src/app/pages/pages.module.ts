@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PagesRoutingModule } from './pages-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductModule } from '../product/product.module';
@@ -7,6 +8,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 @NgModule({
   declarations: [LandingComponent, ProductDetailsComponent],
-  imports: [CommonModule, SharedModule, ProductModule],
+  imports: [CommonModule, PagesRoutingModule, SharedModule, ProductModule],
 })
 export class PagesModule {}
