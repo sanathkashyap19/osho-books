@@ -5,25 +5,86 @@
     top: 0;
     z-index: 16;
     padding: 20px;
-
-    .hamburger-icon {
-        width: 40px;
-        height: 40px;
-        padding: 5px;
-
-        &-dash {
-            width: 100%;
-            height: 5px;
-            background-color: var(--primary-dark);
-            margin: 5px auto;
-
-            &:first-child {
-                margin-top: 0;
+    
+    .navbar {
+        &-icon {
+            color: #000;
+        }
+        &-toggler {
+            border: none;
+            background: transparent !important;
+            &:focus {
+                outline: none;
+                background: transparent !important;
             }
-
-            &:last-child {
-                margin-bottom: 0;
+            .icon-bar {
+                background-color: var(--text-primary);
+                transform: rotate(0deg) translate(0px, 0px);
+                transition: ease all .2s;
+                display: block;
+                width: 22px;
+                height: 2px;
+                border-radius: 1px;
+            }
+            .icon-bar + .icon-bar {
+                margin-top: 5px;
             }
         }
-    }
+        &-toggler[aria-expanded="false"] .top-bar {
+            transform: rotate(45deg);
+            transform-origin: 10% 10%;
+        }
+        
+        &-toggler[aria-expanded="false"] .middle-bar {
+            opacity: 0;
+        }
+        
+        &-toggler[aria-expanded="false"] .bottom-bar {
+            transform: rotate(-45deg);
+            transform-origin: 0% 50%;
+        }
+        
+        &-toggler[aria-expanded="true"] .top-bar {
+            transform: rotate(0);
+        }
+        
+        &-toggler[aria-expanded="true"] .middle-bar {
+            opacity: 1;
+        }
+        
+        &-toggler[aria-expanded="true"] .bottom-bar {
+            transform: rotate(0);
+        }
+
+        &-nav {
+            .nav-link {
+                color: var(--primary-dark);
+                border-radius: 1px solid;
+                margin: 0 0.25em;
+                padding: 1rem 0;
+                &:not(.disabled) {
+                    &:hover, &:focus {
+                    color: var(--grey-light);
+                    }
+                }
+            }
+        }
+        &-collapse {
+            position: fixed;
+            background: white;
+            width: 0;
+            top: 50px;
+            left: 0;
+            padding: 0 30px;
+            height: 100%;
+            right: 0;
+            transform: translateX(-50%);
+            transition: ease all 0.2s;
+        }
+        &-collapse.show {
+            transform: translateX(0);
+            width: 50%;
+        }
+    }  
 }
+
