@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CheckoutFlowComponent } from './checkout-flow/checkout-flow.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,11 @@ const routes: Routes = [
     component: ProductDetailsComponent,
   },
   {
-    path: 'landing',
+    path: 'checkout',
+    component: CheckoutFlowComponent,
+  },
+  {
+    path: '**',
     component: LandingComponent,
   },
 ];
