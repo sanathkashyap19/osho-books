@@ -63,27 +63,27 @@
                 padding: 1rem 0;
                 &:not(.disabled) {
                     &:hover, &:focus {
-                    color: var(--grey-light);
+                        color: var(--grey-light);
                     }
                 }
             }
         }
         &-collapse {
+            background: var(--primary);
             position: fixed;
-            background: white;
+            z-index: 10;
             width: 0;
             top: 50px;
             left: 0;
+            right: 0;
             padding: 0 30px;
             height: 100%;
-            right: 0;
             transform: translateX(-50%);
-            transition: ease all 0.2s;
+            transition: transform 1s ease;;
         }
         &-collapse.show {
             transform: translateX(0);
             width: 25%;
-            z-index: 10;
         }
     }  
 }
