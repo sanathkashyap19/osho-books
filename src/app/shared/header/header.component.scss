@@ -5,17 +5,14 @@
     top: 0;
     z-index: 16;
     padding: 20px;
-    
     .navbar {
         &-icon {
             color: #000;
         }
         &-toggler {
             border: none;
-            background: transparent !important;
             &:focus {
                 outline: none;
-                background: transparent !important;
             }
             .icon-bar {
                 background-color: var(--text-primary);
@@ -60,30 +57,31 @@
             .nav-link {
                 color: var(--primary-dark);
                 border-radius: 1px solid;
-                margin: 0 0.25em;
-                padding: 1rem 0;
+                margin: 0 8px;
+                padding: 16px 0;
                 &:not(.disabled) {
                     &:hover, &:focus {
-                    color: var(--grey-light);
+                        color: var(--grey-light);
                     }
                 }
             }
         }
         &-collapse {
+            background: var(--primary);
             position: fixed;
-            background: white;
+            z-index: 10;
             width: 0;
             top: 50px;
             left: 0;
+            right: 0;
             padding: 0 30px;
             height: 100%;
-            right: 0;
             transform: translateX(-50%);
-            transition: ease all 0.2s;
+            transition: transform 1s ease;
         }
         &-collapse.show {
             transform: translateX(0);
-            width: 50%;
+            width: 25%;
         }
     }  
 }
