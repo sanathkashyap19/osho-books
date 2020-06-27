@@ -12,9 +12,8 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.imagesUrl = [
-      '../../../assets/images/Capture.PNG',
-      '../../../assets/images/Capture.PNG',
-      '../../../assets/images/Capture.PNG',
+      '../../../assets/images/belief_doubt_and_fanaticism-front.jpg',
+      '../../../assets/images/belief_doubt_and_fanaticism-back.jpg',
     ];
   }
 }
