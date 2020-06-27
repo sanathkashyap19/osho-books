@@ -9,16 +9,15 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   
+  //clicking outside should close the hamburger menu
   @HostListener('document:click', ['$event'])
-  clickout(event) {
+  clickout(event: any) {
     if(!event.target.classList.contains('navbar-collapse *') && !event.target.classList.contains('navbar-toggler') && !event.target.classList.contains('icon-bar')) {
       if(this.isCollapsed) {
         this.isCollapsed = !this.isCollapsed;
       }
-      
     } 
   }
 

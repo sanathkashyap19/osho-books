@@ -20,9 +20,19 @@
     flex: 3;
 }
 
+#slider-buttons-left, #slider-buttons-right {
+    z-index: 5 !important; //overriding default z-index property for slider buttons
+}
+
 .primary-btn {
     background-color: var(--primary-dark);
     color: var(--primary);
     padding: 10px 20px;
     text-align: center;
+
+    :hover {
+        background-color: var(--primary);
+        color: var(--primary-dark);
+        border: 1px solid var(--primary-dark);
+    }
 }
