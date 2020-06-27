@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LandingComponent,
     ProductDetailsComponent,
     CheckoutFlowComponent,
-    LoginFlowComponent,
+    LoginFlowComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     ProductModule,
     CheckoutModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
 })
 export class PagesModule {}
