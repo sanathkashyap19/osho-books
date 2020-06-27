@@ -1,0 +1,11 @@
+.checkout-table {
+    padding: 20px;
+}
+
+.checkout-table.table-header {
+    border-bottom: 2px solid var(--text-secondary);
+
+    span {
+        text-transform: uppercase;
+    }
+}

@@ -8,6 +8,10 @@
     justify-content: space-between;
 }
 
+.inline-flex {
+    display: inline-flex;
+}
+
 .flex-1 {
     flex: 1;
 }
@@ -20,8 +24,22 @@
     flex: 3;
 }
 
-#slider-buttons-left, #slider-buttons-right {
-    z-index: 5 !important; //overriding default z-index property for slider buttons
+.font-size-sm {}
+
+.img-size-sm {
+    width: 100px;
+    height: 100px;
+}
+
+.img-size-lg {
+    width: 512px;
+    height: 512px;
+}
+
+//overriding default z-index property for slider buttons
+#slider-buttons-left,
+#slider-buttons-right {
+    z-index: 5 !important;
 }
 
 .primary-btn {
@@ -34,5 +52,18 @@
         background-color: var(--primary);
         color: var(--primary-dark);
         border: 1px solid var(--primary-dark);
+    }
+}
+
+.secondary-btn {
+    background-color: var(--primary);
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
+    padding: 10px 20px;
+    text-align: center;
+
+    :hover {
+        background-color: var(--primary-dark);
+        color: var(--primary);
     }
 }
