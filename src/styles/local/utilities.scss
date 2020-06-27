@@ -24,7 +24,17 @@
     flex: 3;
 }
 
-.font-size-sm {}
+.font-size-sm {
+    font-size: 12px;
+}
+
+.font-size-md {
+    font-size: 16px;
+}
+
+.font-size-lg {
+    font-size: 20px;
+}
 
 .img-size-sm {
     width: 100px;
