@@ -29,4 +29,10 @@
     color: var(--primary);
     padding: 10px 20px;
     text-align: center;
+
+    :hover {
+        background-color: var(--primary);
+        color: var(--primary-dark);
+        border: 1px solid var(--primary-dark);
+    }
 }

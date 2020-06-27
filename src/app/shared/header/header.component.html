@@ -1,4 +1,4 @@
-<div class="header-container row-container">
+<div class="header-container shadow row-container">
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#hamburgerMenu"
     aria-controls="navbarGrey" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed"
     [attr.aria-expanded]="!isCollapsed">
@@ -24,5 +24,12 @@
     </ul>
   </div>
   <div class="logo-wrapper" routerLink="/">Osho Books</div>
-  <div class=""></div>
+  <div class="row-container">
+    <a routerLink="/">
+      <img class="mr-2" src="../../../assets/icons/login.svg" alt="">
+    </a>
+    <a routerLink="/checkout" routerLinkActive="active">
+      <img src="../../../assets/icons/cart.svg" alt="">
+    </a>
+  </div>
 </div>
