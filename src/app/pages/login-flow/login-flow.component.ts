@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { CustomvalidationService } from 'src/app/shared/services/custom-validation.service';
 
 @Component({
   selector: 'app-login-flow',
@@ -12,7 +13,7 @@ export class LoginFlowComponent implements OnInit {
   isSignInSubmitted = false;
   isSignUpSubmitted = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private customValidator: CustomvalidationService) {}
 
   ngOnInit(): void {
     this.signInForm = this.fb.group({
@@ -22,12 +23,12 @@ export class LoginFlowComponent implements OnInit {
     this.signUpForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', Validators.compose([Validators.required, this.customValidator.patternValidator()])],
       confirmPassword: ['', [Validators.required]],
     },
-      // {
-      //   validator: this.customValidator.MatchPassword('password', 'confirmPassword'),
-      // }
+      {
+        validator: this.customValidator.MatchPassword('password', 'confirmPassword'),
+      }
     );
   }
   get signUpFormControl() {
