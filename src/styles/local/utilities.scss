@@ -81,3 +81,12 @@
         color: var(--primary);
     }
 }
+
+// boostrap override for centered modals
+.modal-open .modal {
+    display: flex !important;
+    align-items: center !important;
+    .modal-dialog {
+      flex-grow: 1;
+    }
+}

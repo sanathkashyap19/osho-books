@@ -1,8 +1,13 @@
 <div class="row">
-    <div class="col-9">
-        <ul class="list-inline">
-            <li class="p-2 list-inline-item"  *ngFor="let item of filterOptions">{{item}}</li>
+    <div class="col-9 d-flex flex-wrap">
+        <ul class="list-inline m-0">
+            <li class="p-2 list-inline-item" *ngFor="let item of filterOptions">
+                <button class="btn btn-light" (click)="removeItem(item)"><span class="pr-3">{{item}}</span>X</button>
+            </li>
         </ul>
+        <div class="p-2">
+            <button *ngIf="filterOptions?.length" class="btn btn-link normal-size-btn p-2" (click)="removeAll()">Clear all</button>
+        </div>
     </div>
     <div class="col-3 d-flex justify-content-end">
         <button class="primary-btn normal-size-btn" (click)="openModal(content)">Filter</button>
@@ -11,23 +16,24 @@
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
         <h4>Filter</h4>
+        <div>X</div>
     </div>
     <div class="modal-body">
         <h5>Categories</h5>
         <div class="d-flex flex-wrap">
-            <div class="" *ngFor="let category of categories">
-                <button [ngClass]="{'primary-btn': isSelected}" class="secondary-btn p-2 m-1" (click)="filterClick(category)">{{category}}</button>
+            <div class="" *ngFor="let category of categories; index as i">
+                <button id="{{'category' + i}}" [ngClass]="(isSelected) ? 'primary-btn' : 'secondary-btn'" class="p-2 m-1" (click)="filterClick(category)">{{category}}</button>
             </div>
         </div>
         <h5 class="mt-2">Price</h5>
         <div class="d-flex flex-wrap">
-            <div class="" *ngFor="let price of prices">
-                <button [ngClass]="{'primary-btn': isSelected}" class="secondary-btn p-2 m-1" (click)="filterClick(price)">{{price}}</button>
+            <div class="" *ngFor="let price of prices; index as i">
+                <button id="{{'price' + i}}" [ngClass]="(isSelected) ? 'primary-btn' : 'secondary-btn'" class="sp-2 m-1" (click)="filterClick(price)">{{price}}</button>
             </div>
         </div>
     </div>
     <div class="modal-footer d-flex justify-content-between">
-        <button class="Secondary-btn p-2 m-1" (click)="removeSelected()">Cancel</button>
+        <button class="btn btn-light p-2 m-1" (click)="removeSelected()">Cancel</button>
         <button class="p-2 m-1" [ngClass]="(selectedOptions.length) ? 'primary-btn' : 'secondary-btn'" [disabled]="!selectedOptions.length" (click)="applySelected()">Apply</button>
     </div>
 </ng-template>

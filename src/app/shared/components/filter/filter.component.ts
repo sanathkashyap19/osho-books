@@ -22,10 +22,13 @@ export class FilterComponent implements OnInit {
   }
 
   openModal(content) {
-    this.modalService.open(content)
+    this.modalService.open(content);
   }
 
+
+
   filterClick(val) {
+    this.isSelected = !this.isSelected;
     let valid = false;
     this.selectedOptions.forEach((data,i) => {
       if(data === val) {
@@ -49,8 +52,22 @@ export class FilterComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
+  removeAll() {
+    this.selectedOptions = [];
+    this.updateFilterOptions();
+  }
+
   updateFilterOptions() {
     this.filterOptions = Object.assign([],this.selectedOptions);
+  }
+
+  removeItem(option) {
+    this.selectedOptions.forEach((data,i) => {
+      if(data === option) {
+        this.selectedOptions.splice(i,1);
+      }
+    });
+    this.updateFilterOptions();
   }
 
 }
