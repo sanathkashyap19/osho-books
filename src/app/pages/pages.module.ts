@@ -9,6 +9,7 @@ import { CheckoutFlowComponent } from './checkout-flow/checkout-flow.component';
 import { CheckoutModule } from '../checkout/checkout.module';
 import { LoginFlowComponent } from './login-flow/login-flow.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetailsComponent,
     CheckoutFlowComponent,
     LoginFlowComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
