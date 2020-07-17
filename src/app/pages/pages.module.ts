@@ -10,6 +10,7 @@ import { CheckoutModule } from '../checkout/checkout.module';
 import { LoginFlowComponent } from './login-flow/login-flow.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { UserProfileModule } from '../user-profile/user-profile.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProfileComponent } from './profile/profile.component';
     SharedModule,
     ProductModule,
     CheckoutModule,
+    UserProfileModule,
     ReactiveFormsModule,
   ],
 })
