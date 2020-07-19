@@ -8,8 +8,7 @@ import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstra
 })
 export class FilterComponent implements OnInit {
   categories = ['Education','Entertainment','Worship','Travel','Electronics','Environment'];
-  prices = ['Less than 500','Less than 200'];
-  isSelected = false;
+  allFilters = [];
   selectedOptions = [];
   filterOptions = [];
 
@@ -19,25 +18,41 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categories.forEach(item => {
+      let newValue = {
+        option: item,
+        checked: false
+      };
+      this.allFilters.push(newValue);
+    });
   }
 
   openModal(content) {
     this.modalService.open(content);
   }
 
-
+  closeModal() {
+    this.modalService.dismissAll();
+  }
 
   filterClick(val) {
-    this.isSelected = !this.isSelected;
     let valid = false;
-    this.selectedOptions.forEach((data,i) => {
-      if(data === val) {
-        valid = true;
-        this.selectedOptions.splice(i,1);
-      }
-    });
+    if(this.selectedOptions.includes(val)) {
+      valid = true;
+      this.selectedOptions.splice(this.selectedOptions.indexOf(val),1);
+      this.allFilters.forEach((item,i) => {
+        if(item.option === val) {
+          item.checked = false;
+        }
+      });
+    }
     if(!valid) {
       this.selectedOptions.push(val);
+      this.allFilters.forEach((item,i) => {
+        if(item.option === val) {
+          item.checked = true;
+        }
+      });
     }
   }
 
@@ -62,11 +77,9 @@ export class FilterComponent implements OnInit {
   }
 
   removeItem(option) {
-    this.selectedOptions.forEach((data,i) => {
-      if(data === option) {
-        this.selectedOptions.splice(i,1);
-      }
-    });
+    if(this.selectedOptions.includes(option)) {
+      this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+    }
     this.updateFilterOptions();
   }
 
