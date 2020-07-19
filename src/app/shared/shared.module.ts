@@ -7,11 +7,12 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
-  declarations: [CarouselComponent, ItemCardComponent, HeaderComponent, DetailsOnHoverDirective, BreadcrumbsComponent],
+  declarations: [CarouselComponent, ItemCardComponent, HeaderComponent, DetailsOnHoverDirective, BreadcrumbsComponent, FilterComponent],
   imports: [CommonModule, NgbModule, RouterModule],
-  exports: [NgbModule, CarouselComponent, ItemCardComponent, HeaderComponent],
+  exports: [NgbModule, CarouselComponent, ItemCardComponent, HeaderComponent, FilterComponent],
 })
 export class SharedModule {
   static forRoot() {
