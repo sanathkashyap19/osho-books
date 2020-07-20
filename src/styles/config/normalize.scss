@@ -27,6 +27,17 @@ body {
 }
 
 /**
+    * Hide scroll bar
+    */
+body::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/**
    * Render the `main` element consistently in IE.
    */
 

@@ -4,6 +4,7 @@ import { LandingComponent } from './landing/landing.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CheckoutFlowComponent } from './checkout-flow/checkout-flow.component';
 import { LoginFlowComponent } from './login-flow/login-flow.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -20,12 +21,16 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginFlowComponent
+    component: LoginFlowComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
   {
     path: '**',
     component: LandingComponent,
-  }
+  },
 ];
 
 @NgModule({

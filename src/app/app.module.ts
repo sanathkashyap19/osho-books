@@ -16,11 +16,11 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgbModule,
+    // NgbModule,
     SharedModule,
     PagesModule,
     ProductModule,
-    PagesRoutingModule
+    PagesRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
