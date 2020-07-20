@@ -12,10 +12,10 @@
                                 *ngIf="(signInFormControl.email.touched || isSignInSubmitted) && signInFormControl.email.errors?.required">
                                 Email is required
                             </span>
-                            <!-- <span class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="signInFormControl.email.touched && signInFormControl.email.errors?.email">
                                 Enter a valid email address
-                            </span> -->
+                            </span>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
@@ -24,14 +24,14 @@
                                 *ngIf="(signInFormControl.password.touched || isSignInSubmitted) && signInFormControl.password.errors?.required">
                                 Password is required
                             </span>
-                            <!-- <span class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="signInFormControl.password.touched && signInFormControl.password.errors?.invalidPassword">
                                 Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
                                 letter and 1 number
-                            </span> -->
+                            </span>
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-success">Sign in</button>
+                            <button type="submit" class="btn primary-btn">Sign in</button>
                         </div>
                     </form>
                 </div>
@@ -59,10 +59,10 @@
                                 *ngIf="(signUpFormControl.email.touched || isSignUpSubmitted) && signUpFormControl.email.errors?.required">
                                 Email is required
                             </span>
-                            <!-- <span class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="signUpFormControl.email.touched && signUpFormControl.email.errors?.email">
                                 Enter a valid email address
-                            </span> -->
+                            </span>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
@@ -71,11 +71,11 @@
                                 *ngIf="(signUpFormControl.password.touched || isSignUpSubmitted) && signUpFormControl.password.errors?.required">
                                 Password is required
                             </span>
-                            <!-- <span class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="signUpFormControl.password.touched && signUpFormControl.password.errors?.invalidPassword">
                                 Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
                                 letter and 1 number
-                            </span> -->
+                            </span>
                         </div>
                         <div class="form-group">
                             <label>Confirm Password</label>
@@ -84,13 +84,13 @@
                                 *ngIf="(signUpFormControl.confirmPassword.touched || isSignUpSubmitted)&& signUpFormControl.confirmPassword.errors?.required">
                                 Confirm Password is required
                             </span>
-                            <!-- <span class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="signUpFormControl.confirmPassword.touched && signUpFormControl.confirmPassword.errors?.passwordMismatch">
                                 Passwords doesnot match
-                            </span> -->
+                            </span>
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-success">Sign up</button>
+                            <button type="submit" class="btn primary-btn">Sign up</button>
                         </div>
                     </form>
                     <p class="text-center">Or Sign up with:</p>

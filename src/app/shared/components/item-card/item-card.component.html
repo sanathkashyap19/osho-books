@@ -1,9 +1,9 @@
-<div class="card p-4 m-4">
+<div class="card hide-card-details p-4 m-4" appDetailsOnHover>
   <!-- <div class="img-size-lg"> -->
   <img class="card-img-top" [attr.src]="image" alt="Card image cap">
   <!-- </div> -->
-  <div class="card-body mt-4">
-    <h5 class="card-title" routerLink="/product-details" routerLinkActive="active">{{ title }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
     <p class="card-text font-size-md">Price: ₹<strong>{{ price }}</strong>/-
     </p>
   </div>

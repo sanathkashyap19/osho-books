@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselComponent } from './carousel/carousel.component';
-import { ItemCardComponent } from './item-card/item-card.component';
-import { HeaderComponent } from './header/header.component';
+import { RouterModule } from '@angular/router';
+import { DetailsOnHoverDirective } from './directives/details-on-hover.directive';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
+import { HeaderComponent } from './components/header/header.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
-  declarations: [CarouselComponent, ItemCardComponent, HeaderComponent],
-  imports: [CommonModule, NgbModule],
-  exports: [NgbModule, CarouselComponent, ItemCardComponent, HeaderComponent],
+  declarations: [CarouselComponent, ItemCardComponent, HeaderComponent, DetailsOnHoverDirective, BreadcrumbsComponent, FilterComponent],
+  imports: [CommonModule, NgbModule, RouterModule],
+  exports: [NgbModule, CarouselComponent, ItemCardComponent, HeaderComponent, FilterComponent],
 })
-export class SharedModule {}
+export class SharedModule {
+  static forRoot() {
+    return {
+      ngModule: SharedModule
+    };
+  }
+}
