@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -40,11 +40,7 @@ export class FilterComponent implements OnInit {
     if(this.selectedOptions.includes(val)) {
       valid = true;
       this.selectedOptions.splice(this.selectedOptions.indexOf(val),1);
-      this.allFilters.forEach((item,i) => {
-        if(item.option === val) {
-          item.checked = false;
-        }
-      });
+      this.unCheckFilters(val);
     }
     if(!valid) {
       this.selectedOptions.push(val);
@@ -56,8 +52,19 @@ export class FilterComponent implements OnInit {
     }
   }
 
+  unCheckFilters(value) {
+    this.allFilters.forEach(item => {
+      if(item.option === value) {
+        item.checked = false;
+      }
+    });
+  }
+  
   removeSelected() {
     this.selectedOptions = [];
+    this.allFilters.forEach(item => {
+        item.checked = false;
+    });
     this.modalService.dismissAll();
     this.updateFilterOptions();
   }
@@ -80,6 +87,7 @@ export class FilterComponent implements OnInit {
     if(this.selectedOptions.includes(option)) {
       this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
     }
+    this.unCheckFilters(option);
     this.updateFilterOptions();
   }
 
