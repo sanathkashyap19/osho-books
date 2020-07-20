@@ -10,14 +10,27 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
 import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
-  declarations: [CarouselComponent, ItemCardComponent, HeaderComponent, DetailsOnHoverDirective, BreadcrumbsComponent, FilterComponent],
+  declarations: [
+    CarouselComponent,
+    ItemCardComponent,
+    HeaderComponent,
+    DetailsOnHoverDirective,
+    BreadcrumbsComponent,
+    FilterComponent,
+  ],
   imports: [CommonModule, NgbModule, RouterModule],
-  exports: [NgbModule, CarouselComponent, ItemCardComponent, HeaderComponent, FilterComponent],
+  exports: [
+    NgbModule,
+    CarouselComponent,
+    ItemCardComponent,
+    HeaderComponent,
+    FilterComponent,
+  ],
 })
 export class SharedModule {
   static forRoot() {
     return {
-      ngModule: SharedModule
+      ngModule: SharedModule,
     };
   }
 }

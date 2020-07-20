@@ -11,6 +11,7 @@ import { LoginFlowComponent } from './login-flow/login-flow.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { UserProfileModule } from '../user-profile/user-profile.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UserProfileModule } from '../user-profile/user-profile.module';
   ],
   imports: [
     CommonModule,
+    NgbModule,
     PagesRoutingModule,
     SharedModule,
     ProductModule,
