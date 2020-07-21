@@ -5,15 +5,21 @@
     top: 0;
     z-index: 16;
     padding: 20px;
+
     .navbar {
         &-icon {
             color: #000;
         }
+
         &-toggler {
             border: none;
+            margin: 10px;
+            padding: 15px;
+
             &:focus {
                 outline: none;
             }
+
             .icon-bar {
                 background-color: var(--text-primary);
                 transform: rotate(0deg) translate(0px, 0px);
@@ -23,32 +29,34 @@
                 height: 2px;
                 border-radius: 1px;
             }
-            .icon-bar + .icon-bar {
+
+            .icon-bar+.icon-bar {
                 margin-top: 5px;
             }
         }
+
         &-toggler[aria-expanded="false"] .top-bar {
             transform: rotate(45deg);
             transform-origin: 10% 10%;
         }
-        
+
         &-toggler[aria-expanded="false"] .middle-bar {
             opacity: 0;
         }
-        
+
         &-toggler[aria-expanded="false"] .bottom-bar {
             transform: rotate(-45deg);
             transform-origin: 0% 50%;
         }
-        
+
         &-toggler[aria-expanded="true"] .top-bar {
             transform: rotate(0);
         }
-        
+
         &-toggler[aria-expanded="true"] .middle-bar {
             opacity: 1;
         }
-        
+
         &-toggler[aria-expanded="true"] .bottom-bar {
             transform: rotate(0);
         }
@@ -59,13 +67,17 @@
                 border-radius: 1px solid;
                 margin: 0 8px;
                 padding: 16px 0;
+
                 &:not(.disabled) {
-                    &:hover, &:focus {
+
+                    &:hover,
+                    &:focus {
                         color: var(--grey-light);
                     }
                 }
             }
         }
+
         &-collapse {
             background: var(--primary);
             position: fixed;
@@ -79,10 +91,16 @@
             transform: translateX(-50%);
             transition: transform 1s ease;
         }
+
         &-collapse.show {
             transform: translateX(0);
             width: 25%;
         }
-    }  
-}
+    }
 
+    .row-container {
+        a:first-child {
+            margin-right: 20px;
+        }
+    }
+}

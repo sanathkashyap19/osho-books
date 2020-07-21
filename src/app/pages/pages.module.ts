@@ -9,21 +9,27 @@ import { CheckoutFlowComponent } from './checkout-flow/checkout-flow.component';
 import { CheckoutModule } from '../checkout/checkout.module';
 import { LoginFlowComponent } from './login-flow/login-flow.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
+import { UserProfileModule } from '../user-profile/user-profile.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     LandingComponent,
     ProductDetailsComponent,
     CheckoutFlowComponent,
-    LoginFlowComponent
+    LoginFlowComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
+    NgbModule,
     PagesRoutingModule,
     SharedModule,
     ProductModule,
     CheckoutModule,
-    ReactiveFormsModule
+    UserProfileModule,
+    ReactiveFormsModule,
   ],
 })
 export class PagesModule {}
