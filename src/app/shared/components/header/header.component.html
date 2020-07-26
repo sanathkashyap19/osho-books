@@ -1,38 +1,37 @@
 <div class="header-container shadow row-container">
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#hamburgerMenu"
-    aria-controls="navbarGrey" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed"
-    [attr.aria-expanded]="!isCollapsed">
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#hamburgerMenu" aria-controls="navbarGrey" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
     <span class="icon-bar top-bar"></span>
     <span class="icon-bar middle-bar"></span>
     <span class="icon-bar bottom-bar"></span>
     <span class="sr-only">Toggle navigation</span>
   </button>
-  <div class="collapse navbar-collapse" id="hamburgerMenu" [ngbCollapse]="!isCollapsed">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/product-details" routerLinkActive="active">Stocklist</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="" routerLinkActive="active">Contact</a>
-      </li>
-    </ul>
-  </div>
-  <div class="logo-wrapper font-size-lg" routerLink="/">Osho Books</div>
-  <div class="row-container">
-    <a routerLink="/login" routerLinkActive="active">
-      <img class="mr-2" src="../../../assets/icons/login.svg" alt="login">
-    </a>
-    <a routerLink="/checkout" routerLinkActive="active">
-      <img src="../../../assets/icons/cart.svg" alt="cart">
-    </a>
-  </div>
+    <div class="collapse navbar-collapse" id="hamburgerMenu" [ngbCollapse]="!isCollapsed">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/product-details" routerLinkActive="active">Stocklist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="" routerLinkActive="active">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="logo-wrapper font-size-lg" routerLink="/">Osho Books</div>
+    <div class="row-container">
+        <a *ngIf="!currentUser" routerLink="/login" routerLinkActive="active">
+            <img class="mr-2" src="../../../assets/icons/login.svg" alt="login">
+        </a>
+        <a *ngIf="currentUser" class="nav-item nav-link" style="cursor:pointer" (click)="logout()">Logout</a>
+        <a routerLink="/checkout" routerLinkActive="active">
+            <img src="../../../assets/icons/cart.svg" alt="cart">
+        </a>
+    </div>
 </div>
