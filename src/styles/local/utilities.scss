@@ -2,6 +2,10 @@
     padding: 40px;
 }
 
+.spacer {
+    margin-bottom: 40px;
+}
+
 .row-container {
     display: flex;
     align-items: center;
@@ -58,6 +62,7 @@
     padding: 10px 20px;
     text-align: center;
     height: 40px;
+
     :hover {
         background-color: var(--primary);
         color: var(--primary-dark);
@@ -82,7 +87,8 @@
 .modal-open .modal {
     display: flex !important;
     align-items: center !important;
+
     .modal-dialog {
-      flex-grow: 1;
+        flex-grow: 1;
     }
 }
