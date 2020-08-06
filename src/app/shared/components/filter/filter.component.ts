@@ -62,11 +62,15 @@ export class FilterComponent implements OnInit {
   
   removeSelected() {
     this.selectedOptions = [];
-    this.allFilters.forEach(item => {
-        item.checked = false;
-    });
+    this.unCheckAlloptions();
     this.modalService.dismissAll();
     this.updateFilterOptions();
+  }
+
+  unCheckAlloptions() {
+    this.allFilters.forEach(item => {
+      item.checked = false;
+    });
   }
 
   applySelected() {
@@ -76,6 +80,7 @@ export class FilterComponent implements OnInit {
 
   removeAll() {
     this.selectedOptions = [];
+    this.unCheckAlloptions();
     this.updateFilterOptions();
   }
 
@@ -90,5 +95,4 @@ export class FilterComponent implements OnInit {
     this.unCheckFilters(option);
     this.updateFilterOptions();
   }
-
 }

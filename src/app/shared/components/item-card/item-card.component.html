@@ -1,10 +1,25 @@
-<div class="card hide-card-details p-4 m-4" appDetailsOnHover>
-  <!-- <div class="img-size-lg"> -->
+<!-- <div class="card hide-card-details p-4 m-4" appDetailsOnHover>
+  <div class="img-size-lg">
   <img class="card-img-top" [attr.src]="image" alt="Card image cap">
-  <!-- </div> -->
+  </div>
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
     <p class="card-text font-size-md">Price: ₹<strong>{{ price }}</strong>/-
     </p>
+  </div>
+</div> -->
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <div class="img-container">
+        <img class="card-img-top" [attr.src]="image" alt="Card image cap">
+      </div>
+    </div>
+    <div class="flip-card-back">
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text font-size-md">Price: ₹<strong>{{ price }}</strong>/-
+      </p>
+    </div>
   </div>
 </div>
