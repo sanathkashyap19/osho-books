@@ -1,8 +1,10 @@
+import { UserService } from './_services/user.service';
+import { InterceptorService } from './_services/interceptor.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -16,13 +18,14 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     // NgbModule,
     SharedModule,
     PagesModule,
     ProductModule,
-    PagesRoutingModule,
+    PagesRoutingModule
   ],
-  providers: [],
+  providers: [UserService,{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }], //
   bootstrap: [AppComponent],
 })
 export class AppModule {}

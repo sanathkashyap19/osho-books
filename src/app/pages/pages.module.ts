@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { UserProfileModule } from '../user-profile/user-profile.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CheckoutFlowComponent,
     LoginFlowComponent,
     ProfileComponent,
+    RegisterComponent,
   ],
   imports: [
     CommonModule,

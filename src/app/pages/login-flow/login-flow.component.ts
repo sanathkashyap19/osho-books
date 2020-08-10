@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { CustomvalidationService } from 'src/app/shared/services/custom-validation.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/_services/authentication.service';
 
 @Component({
   selector: 'app-login-flow',
@@ -8,52 +10,44 @@ import { CustomvalidationService } from 'src/app/shared/services/custom-validati
   styleUrls: ['./login-flow.component.scss']
 })
 export class LoginFlowComponent implements OnInit {
-  signInForm: FormGroup;
-  signUpForm: FormGroup;
-  isSignInSubmitted = false;
-  isSignUpSubmitted = false;
-
-  constructor(private fb: FormBuilder, private customValidator: CustomvalidationService) {}
-
-  ngOnInit(): void {
-    this.signInForm = this.fb.group({
-      email: ['',[Validators.required, Validators.email]],
-      password: ['',Validators.required]
-    })
-    this.signUpForm = this.fb.group({
-      name: ['', Validators.required],
+  loginForm: FormGroup;
+  loading = false;
+  submitted = false;
+  returnUrl: string;
+   
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService : AuthenticationService
+  ) { }
+   
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.compose([Validators.required, this.customValidator.patternValidator()])],
-      confirmPassword: ['', [Validators.required]],
+      password: ['', Validators.required]
+    });
+  }
+   
+  // for accessing to form fields
+  get fval() { return this.loginForm.controls; }
+   
+  onFormSubmit() {
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      console.log("invalid")
+      return;
+    }
+   
+    this.loading = true;
+    this.authenticationService.login(this.fval.email.value, this.fval.password.value)
+    .subscribe(
+      data => {
+      this.router.navigate(['../']);
     },
-      {
-        validator: this.customValidator.MatchPassword('password', 'confirmPassword'),
-      }
-    );
+    error => {
+    // this.toastr.error(error.error.message, 'Error');
+      this.loading = false;
+    });
   }
-  get signUpFormControl() {
-    return this.signUpForm.controls;
-  }
-
-  get signInFormControl() {
-    return this.signInForm.controls;
-  }
-
-  signIn() {
-    this.isSignInSubmitted = true;
-    if (this.signInForm.valid) {
-      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-      console.table(this.signInForm.value);
-    }
-    
-  }
-
-  signUp() {
-    this.isSignUpSubmitted = true;
-    if (this.signUpForm.valid) {
-      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-      console.table(this.signUpForm.value);
-    }
-  }
-
 }

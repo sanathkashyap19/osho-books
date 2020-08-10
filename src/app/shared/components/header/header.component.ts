@@ -1,4 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/_services/authentication.service';
+import { User } from 'src/app/models/user.model';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -6,8 +9,17 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isCollapsed: boolean;
+  currentUser: User;
+ 
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
+ 
 
-  constructor() { }
+
 
   ngOnInit(): void {}
   
@@ -19,6 +31,11 @@ export class HeaderComponent implements OnInit {
         this.isCollapsed = !this.isCollapsed;
       }
     } 
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
