@@ -1,4 +1,7 @@
+import { UtilityService } from './../../_services/utility.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-details',
@@ -7,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
   imagesUrl;
+  bookDetails: any;
 
-  constructor() {}
+  constructor(private utilityService: UtilityService, private router: Router) {}
 
   ngOnInit(): void {
+    this.utilityService.bookDetails.pipe(takeUntil(this.router.events)).subscribe(data => {
+      this.bookDetails = data;
+    });
+
     this.imagesUrl = [
       '../../../assets/images/belief_doubt_and_fanaticism-front.jpg',
       '../../../assets/images/belief_doubt_and_fanaticism-back.jpg',
