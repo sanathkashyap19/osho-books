@@ -1,7 +1,7 @@
 <div class="content-wrapper">
-  <h2>Belief, Doubt, And Fanaticism</h2>
-  <div class="py-4">
-    <app-product-image-slider class="flex-2" [imagesUrl]="imagesUrl"></app-product-image-slider>
-    <app-product-info class="flex-1"></app-product-info>
-  </div>
+    <h2>{{bookDetails.item_name}}</h2>
+    <div class="py-4">
+        <app-product-image-slider class="flex-2" [imagesUrl]="imagesUrl"></app-product-image-slider>
+        <app-product-info class="flex-1" [bookData]="bookDetails"></app-product-info>
+    </div>
 </div>

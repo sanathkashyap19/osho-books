@@ -1,74 +1,14 @@
 <app-carousel [images]=images></app-carousel>
 <div class="content-wrapper">
-  <div class="mx-4">
-    <app-filter></app-filter>
-  </div>
-  <div class="my-4">
-    <div class="row-container spacer">
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Belief, Doubt, And Fanaticism'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Beyond Osho The Key to Osho\'s Great Works'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Belief, Doubt, And Fanaticism'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Beyond Osho The Key to Osho\'s Great Works'" [price]="'500'">
-        </app-item-card>
-      </a>
+    <div class="mx-4">
+        <app-filter></app-filter>
     </div>
-    <div class="row-container spacer">
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Belief, Doubt, And Fanaticism'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Beyond Osho The Key to Osho\'s Great Works'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Belief, Doubt, And Fanaticism'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Beyond Osho The Key to Osho\'s Great Works'" [price]="'500'">
-        </app-item-card>
-      </a>
+    <div class="my-4">
+        <div class="row-container spacer flex-wrap justify-content-start">
+            <a class="my-4 px-4 book-details" *ngFor="let book of listOfBooks" (click)="routeToDetailsPage(book)">
+                <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'" [title]="book.item_name" [price]="book.item_price">
+                </app-item-card>
+            </a>
+        </div>
     </div>
-    <div class="row-container spacer">
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Belief, Doubt, And Fanaticism'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Beyond Osho The Key to Osho\'s Great Works'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Belief, Doubt, And Fanaticism'" [price]="'500'">
-        </app-item-card>
-      </a>
-      <a class="flex-1" routerLink="/product-details" routerLinkActive="active">
-        <app-item-card [image]="'../../../assets/images/belief_doubt_and_fanaticism-front.jpg'"
-          [title]="'Beyond Osho The Key to Osho\'s Great Works'" [price]="'500'">
-        </app-item-card>
-      </a>
-    </div>
-  </div>
 </div>
