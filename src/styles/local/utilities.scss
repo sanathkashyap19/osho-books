@@ -1,5 +1,8 @@
 .content-wrapper {
     padding: 40px;
+    @media only screen and (max-width: 767px) {
+        padding: 20px;
+    }
 }
 
 .spacer {
@@ -62,8 +65,7 @@
     padding: 10px 20px;
     text-align: center;
     height: 40px;
-
-    :hover {
+     :hover {
         background-color: var(--primary);
         color: var(--primary-dark);
         border: 1px solid var(--primary-dark);
@@ -76,8 +78,7 @@
     border: 1px solid var(--primary-dark);
     padding: 10px 20px;
     text-align: center;
-
-    :hover {
+     :hover {
         background-color: var(--primary-dark);
         color: var(--primary);
     }
@@ -87,8 +88,13 @@
 .modal-open .modal {
     display: flex !important;
     align-items: center !important;
-
     .modal-dialog {
         flex-grow: 1;
     }
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: black !important;
+    border: none;
+    background: none !important;
 }

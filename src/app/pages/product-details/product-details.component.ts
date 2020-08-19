@@ -20,8 +20,10 @@ export class ProductDetailsComponent implements OnInit {
     });
 
     this.imagesUrl = [
-      '../../../assets/images/belief_doubt_and_fanaticism-front.jpg',
-      '../../../assets/images/belief_doubt_and_fanaticism-back.jpg',
+      {id:'img1', src: '../../../assets/images/belief_doubt_and_fanaticism-front.jpg'},
+      {id:'img2', src: '../../../assets/images/belief_doubt_and_fanaticism-back.jpg'},
+      {id:'img3', src: '../../../assets/images/belief_doubt_and_fanaticism-front.jpg'},
+      {id:'img4', src: '../../../assets/images/belief_doubt_and_fanaticism-back.jpg'}
     ];
   }
 }

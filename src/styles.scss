@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
 
+/* Importing Bootstrap SCSS file. */
+
+@import '~bootstrap/scss/bootstrap';
 // Importing all files in config
 @import 'styles/config/colors.scss';
 @import 'styles/config/grids.scss';
 @import 'styles/config/normalize.scss';
-
-
 // Importing all files in local
 @import 'styles/local/mixins.scss';
 @import 'styles/local/utilities.scss';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';

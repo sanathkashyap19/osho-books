@@ -1,7 +1,11 @@
 <div class="content-wrapper">
     <h2>{{bookDetails.item_name}}</h2>
-    <div class="py-4">
-        <app-product-image-slider class="flex-2" [imagesUrl]="imagesUrl"></app-product-image-slider>
-        <app-product-info class="flex-1" [bookData]="bookDetails"></app-product-info>
+    <div class="py-4 product-details-container">
+        <div class="product-image-container">
+            <app-product-image-slider class="flex-2" [imagesUrl]="imagesUrl"></app-product-image-slider>
+        </div>
+        <div class="product-info-container">
+            <app-product-info class="flex-1" [bookData]="bookDetails"></app-product-info>
+        </div>
     </div>
 </div>
