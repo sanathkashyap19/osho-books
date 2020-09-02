@@ -1,6 +1,9 @@
 .book-details {
     width: 33.33%;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (min-width: 560px) and (max-width: 991px) {
         width: 50%;
+    }
+    @media only screen and (max-width: 767px) {
+        width: 100%;
     }
 }
