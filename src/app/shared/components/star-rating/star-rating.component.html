@@ -1,0 +1,5 @@
+<div class="d-flex">
+    <div *ngFor="let item of starList; let i = index " (click)="setStarTable(i, item)">
+        <i class="material-icons star-rating" [ngClass]="{'starColor':item, 'selectedStar': !item}">grade</i>
+    </div>
+</div>
