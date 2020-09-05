@@ -1,5 +1,9 @@
-<div class="d-flex">
-    <div *ngFor="let item of starList; let i = index " (click)="setStarTable(i, item)">
-        <i class="material-icons star-rating" [ngClass]="{'starColor':item, 'selectedStar': !item}">grade</i>
+<div class="row">
+    <div class="col-sm-12">
+        <ul class="list-inline rating-list" *ngFor="let star of stars; let i= index">
+            <li (click)="countStar(star)" id="{{'starId'+i}}" [ngClass]="{'selected': (star <= selectedValue)}" (mouseover)="addClass(star)" (mouseout)="removeClass(star)">
+                <i class="material-icons">grade</i>
+            </li>
+        </ul>
     </div>
 </div>

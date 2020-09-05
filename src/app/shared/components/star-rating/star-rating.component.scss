@@ -1,11 +1,22 @@
-.starColor {
-    color: grey;
-}
-
-.selectedStar {
-    color: orange !important;
-}
-
-.star-rating {
+.rating-list {
     cursor: pointer;
+    li {
+        font-size: 20px;
+        float: right;
+        color: grey;
+        padding: 10px 5px;
+        &:hover {
+            color: #ffd700;
+            ~ {
+                li i {
+                    color: #ffd700;
+                }
+            }
+        }
+    }
+    li.selected {
+        color: #ffd700;
+    }
+    display: inline-block;
+    list-style: none;
 }
