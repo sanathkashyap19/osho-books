@@ -5,14 +5,6 @@
         float: right;
         color: grey;
         padding: 10px 5px;
-        &:hover {
-            color: #ffd700;
-            ~ {
-                li i {
-                    color: #ffd700;
-                }
-            }
-        }
     }
     li.selected {
         color: #ffd700;
