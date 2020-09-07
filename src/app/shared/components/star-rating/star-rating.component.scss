@@ -1,0 +1,14 @@
+.rating-list {
+    cursor: pointer;
+    li {
+        font-size: 20px;
+        float: right;
+        color: grey;
+        padding: 10px 5px;
+    }
+    li.selected {
+        color: #ffd700;
+    }
+    display: inline-block;
+    list-style: none;
+}

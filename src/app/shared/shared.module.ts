@@ -8,6 +8,7 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FilterComponent } from './components/filter/filter.component';
     DetailsOnHoverDirective,
     BreadcrumbsComponent,
     FilterComponent,
+    StarRatingComponent,
   ],
   imports: [CommonModule, NgbModule, RouterModule],
   exports: [
@@ -25,6 +27,7 @@ import { FilterComponent } from './components/filter/filter.component';
     ItemCardComponent,
     HeaderComponent,
     FilterComponent,
+    StarRatingComponent
   ],
 })
 export class SharedModule {
